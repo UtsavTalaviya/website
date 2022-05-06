@@ -22,6 +22,7 @@ export class HomeComponent implements AfterViewInit {
   getdataTeams(){
     this.clientService.getInfoTeam()
     .subscribe(data => {this.teamsData = data});
+    console.log(this.teamsData);
   }
 
   getdataCountry(){
@@ -30,8 +31,8 @@ export class HomeComponent implements AfterViewInit {
     console.log(this.countryData);
   }
 
-  gotTeamDetails(country: { id: any; }){
-    this.router.navigate(['/home',country.id])
+  gotTeamDetails(team: { team_long_name: any; }){
+    this.router.navigate(['/home',team.team_long_name])
   }
 
   ngAfterViewInit() {

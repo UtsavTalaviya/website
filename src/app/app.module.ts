@@ -9,9 +9,19 @@ import { HomeComponent } from './MyComponents/Data/home/home.component';
 import { FooterComponent } from './MyComponents/Footer/footer/footer.component';
 import { SettingsComponent } from './MyComponents/Data/Settings/settings/settings.component';
 import { ClientService } from './client.service';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule} from '@angular/material/card';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { TeamDetailsComponent } from './team-details/team-details.component';
+import { MatchComponent } from './MyComponents/match/match.component';
+import { MatchDetailsComponent } from './MyComponents/match-details/match-details.component';
+import { MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatSliderModule } from '@angular/material/slider';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +31,9 @@ import { TeamDetailsComponent } from './team-details/team-details.component';
     FooterComponent,
     SettingsComponent,
     PageNotFoundComponent,
-    TeamDetailsComponent
+    TeamDetailsComponent,
+    MatchComponent,
+    MatchDetailsComponent
     
   
     
@@ -30,7 +42,15 @@ import { TeamDetailsComponent } from './team-details/team-details.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatSliderModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    FormsModule
+    
   ],
   providers: [ClientService],
   bootstrap: [AppComponent]

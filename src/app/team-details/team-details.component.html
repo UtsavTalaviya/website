@@ -1,1 +1,7 @@
-<p>team-details works!</p>
+<div class="name">
+    <div *ngFor="let Player of PlayerTeam">
+        <div *ngIf="Player.club_name == id">
+            {{Player.player_name}}
+        </div>
+    </div>
+</div>    

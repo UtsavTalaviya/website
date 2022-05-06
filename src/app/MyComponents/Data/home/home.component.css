@@ -1,6 +1,21 @@
 .content{
-    display: flex;
+    display:inline-flex;
+    
+    
 }
+
+.mat-elevation{
+    background-color: rgb(175, 236, 201);
+    margin: 15px;
+    width: 250px;
+}
+.mat-header{
+    font-family: 'Times New Roman', Times, serif;
+    font-size:large;
+    font-weight: bold;
+    position: relative; 
+}
+ 
 
 @import url('https://fonts.googleapis.com/css2?family=Orelega+One&display=swap');
 
