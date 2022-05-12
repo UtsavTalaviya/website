@@ -7,7 +7,7 @@ import { match,teams,Country, League, ParticipantTeam, matchData, player } from 
   providedIn: 'root'
 })
 export class ClientService {
-
+  
   clientData = "./assets/fifa15_players.csv";
   constructor(private http: HttpClient) { }
 
@@ -27,13 +27,13 @@ export class ClientService {
       tap((data: any) => console.log('Data Fetched:' + JSON.stringify(data))));
     }
   
-  countryTable = "./assets/country.json";
+  countryTable = "http://localhost:3300/country";
   getInfoCountry():Observable<Country[]>{
     return this.http.get<Country[]>(this.countryTable).pipe(
       tap((data: any) => console.log('Data Fetched:' + JSON.stringify(data))));
     }
 
-  leagueTable = "./assets/leagues.json";
+  leagueTable = "http://localhost:3300/league";
   getInfoLeague():Observable<League[]>{
     return this.http.get<League[]>(this.leagueTable).pipe(
       tap((data: any) => console.log('Data Fetched:' + JSON.stringify(data))));
