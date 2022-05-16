@@ -2,10 +2,10 @@
     <h3>Popular clubs</h3>
 </div>
 <div class="content">
-<div (click)="gotTeamDetails(team)" *ngFor="let team of teamsData">
+<div class="content" (click)="gotTeamDetails(team)" *ngFor="let team of teamsData">
     
-        <mat-card  class="mat-elevation">
-            <mat-card-header class="mat-header">
+        <mat-card class="slider-wrap"  class="mat-elevation">
+            <mat-card-header class="slider-main" class="mat-header">
                 {{team.team_long_name}}
 
             </mat-card-header>

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, tap } from 'rxjs';
-import { match,teams,Country, League, ParticipantTeam, matchData, player } from './client';
+import { match,teams,Country, League, ParticipantTeam, matchData, player, season, team_status } from './client';
 
 @Injectable({
   providedIn: 'root'
@@ -39,7 +39,7 @@ export class ClientService {
       tap((data: any) => console.log('Data Fetched:' + JSON.stringify(data))));
     }
 
-  participantTeam = "./assets/participantTeam.json";
+  participantTeam = "http://localhost:3300/data_about_team_participate_in_perticular_league";
   getInfoParticipantTeam():Observable<ParticipantTeam[]>{
     return this.http.get<ParticipantTeam[]>(this.participantTeam).pipe(
       tap((data: any) => console.log('Data Fetched:' + JSON.stringify(data))));
@@ -51,9 +51,22 @@ export class ClientService {
       tap((data: any) => console.log('Data Fetched:' + JSON.stringify(data))));
     }
 
-  PlayerTeam = "./assets/name of players in particular team.json";
+  PlayerTeam = "http://localhost:3300/name_of_player_in_perticular_team";
   getInfoPlayerTeam():Observable<player[]>{
     return this.http.get<player[]>(this.PlayerTeam).pipe(
+      tap((data: any) => console.log('Data Fetched:' + JSON.stringify(data))));
+    }
+
+
+  Season = "./assets/season.json";
+  getInfoSeason():Observable<season[]>{
+    return this.http.get<season[]>(this.Season).pipe(
+      tap((data: any) => console.log('Data Fetched:' + JSON.stringify(data))));
+    }
+
+  team_status = "http://localhost:3300/team_stats";
+  getInfoTeamStatus():Observable<team_status[]>{
+    return this.http.get<team_status[]>(this.team_status).pipe(
       tap((data: any) => console.log('Data Fetched:' + JSON.stringify(data))));
     }
 

@@ -21,6 +21,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import { SeasonComponent } from './MyComponents/Data/season/season.component';
+import { LeagueComponent } from './MyComponents/Data/season/league/league.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { FormsModule } from '@angular/forms';
     PageNotFoundComponent,
     TeamDetailsComponent,
     MatchComponent,
-    MatchDetailsComponent
+    MatchDetailsComponent,
+    SeasonComponent,
+    LeagueComponent
     
   
     

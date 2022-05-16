@@ -1,115 +1,52 @@
-<p>match-details works!</p>
-
-<div>
-    <div *ngFor="let ParticipantTeam of ParticipantTeam">
-        <div *ngIf="ParticipantTeam.league == id">
-            {{ParticipantTeam.team}}
-        </div>
+<div class="container">
+  <h2>Teams &nbsp;Participated...</h2>
+  <div *ngFor="let ParticipantTeam of ParticipantTeam" class="container" class="b3">
+    <div *ngIf="ParticipantTeam.league == id" class="btn btn-light b2">
+      {{ParticipantTeam.team}}
     </div>
-    <div >
-      <div>
-        <table border="1">
-          <thead>
-              <tr border="1">
-                  <th border="1" *ngFor="let hed of columnName let i=index">{{hed}}</th>
-              </tr>
-          </thead>
-          <tbody *ngFor="let MatchData of matches">
-          <tr *ngIf ="MatchData.league == id">
-                  <th>
-                    {{MatchData.date}}  
-                  </th>
-                  <th>
-                    {{MatchData.season}}  
-                  </th>
-                  <th>
-                    {{MatchData.league}}  
-                  </th>
-                  <th>
-                    {{MatchData.home_team}}  
-                  </th>
-                  <th>
-                    {{MatchData.away_team}}  
-                  </th>
-                  <th>
-                    {{MatchData.home_team_goal}}  
-                  </th>
-                  <th>
-                    {{MatchData.away_team_goal}}  
-                  </th>
-                  <th>
-                    {{MatchData.result}}  
-                  </th>
-      
-              </tr>
-          </tbody>
-          
-      </table>
-           
-      </div>
-
-    </div>
+  </div>
+</div>
+<p></p>
+<hr>
+<p></p>
+<div class="count1">
+  <div>
+    <table border="1">
+      <thead>
+        <th border="1" *ngFor="let hed of columnName let i=index">{{hed}}</th>
+        <tr border="1">
+        </tr>
+      </thead>
+      <tbody *ngFor="let MatchData of matches">
+        <tr *ngIf="MatchData.league == id">
+          <th>
+            {{MatchData.date}}
+          </th>
+          <th>
+            {{MatchData.season}}
+          </th>
     
+          <th>
+            {{MatchData.home_team}}
+          </th>
+          <th>
+            {{MatchData.away_team}}
+          </th>
+          <th>
+            {{MatchData.home_team_goal}}
+          </th>
+          <th>
+            {{MatchData.away_team_goal}}
+          </th>
+          <th>
+            {{MatchData.result}}
+          </th>
+
+        </tr>
+      </tbody>
+
+    </table>
+
+  </div>
+
 </div>
-
-
-<div class="table-data">
-  <mat-table [dataSource]="matches1">
-    <ng-container matColumnDef="date">
-      <mat-header-cell *matHeaderCellDef >date</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.date}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="season">
-      <mat-header-cell *matHeaderCellDef >season</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.season}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="league">
-      <mat-header-cell *matHeaderCellDef >league</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.league}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="country">
-      <mat-header-cell *matHeaderCellDef >league</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.league}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="stage">
-      <mat-header-cell *matHeaderCellDef >league</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.league}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="home_team">
-      <mat-header-cell *matHeaderCellDef >Home Team</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.home_team}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="away_team">
-      <mat-header-cell *matHeaderCellDef >away_team</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.away_team}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="home_team_goal">
-      <mat-header-cell *matHeaderCellDef >Home Team Goals</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.home_team_goal}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="away_team_goal">
-      <mat-header-cell *matHeaderCellDef>away team goals</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.away_team_goal}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="result">
-      <mat-header-cell *matHeaderCellDef >Result</mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.result}}</mat-cell>
-    </ng-container>
-    <ng-container matColumnDef="loading">
-      <mat-footer-cell *matFooterCellDef colspan="6">
-        loading data....
-      </mat-footer-cell>
-    </ng-container>
-    <ng-container matColumnDef="noData">
-      <mat-footer-cell *matFooterCellDef colspan="6">
-        No data....
-      </mat-footer-cell>
-    </ng-container>
-    <mat-header-row *matHeaderRowDef="columnName"></mat-header-row>
-    <mat-row *matRowDef="let row; columns:columnName;"></mat-row>
-    <mat-footer-row *matFooterRowDef="['loading']" [ngClass]="{'hide':matches1!=null}"></mat-footer-row>
-    <mat-footer-row *matFooterRowDef="['noData']"  [ngClass]="{'hide':!(matches1!=null && matches1.length==0)}"></mat-footer-row>
-  </mat-table>
-    <!--<mat-paginator [pageSizeOptions]="[3,10,25,100]" [pageSize]="3" showFirstLastButtons></mat-paginator>-->
-</div>
-

@@ -16,7 +16,7 @@ export class MatchDetailsComponent implements AfterViewInit {
   id!: any;
   matches: matchData[]= [];
   matches1: matchData[]= [];
-  columnName = ['date', 'season','league', 'home_team', 'away_team','home_team_goal','away_team_goal','result'];
+  columnName = ['date', 'season', 'home_team', 'away_team','home_team_goal','away_team_goal','result'];
 
   dataa!: any;
   MatchData1!: any;
@@ -24,8 +24,7 @@ export class MatchDetailsComponent implements AfterViewInit {
 
   constructor(private route:ActivatedRoute,
               private clientService: ClientService) { }
-  @ViewChild(MatSort) sort!: MatSort;
-  @ViewChild(MatPaginator) paginator!:MatPaginator;
+
 
   getParticipantData(){
     
@@ -51,21 +50,10 @@ export class MatchDetailsComponent implements AfterViewInit {
     
 
 
-   // this.clientService.getInfoMatchData()
-   // .subscribe({
-    //  next:(res)=>{
-      //  console.log(res);
-       // this.extra(res);
-     // }
-    //}) 
+  
   }
 
-  //extra(dataa:any){
-    //this.matches = new MatTableDataSource<matchData[]>(this.dataa);
-    //console.log(this.matches)
-    
-    //this.matches.sort = this.sort;
-    //this.matches.paginator = this.paginator;
+  
   
 
   ngAfterViewInit(){

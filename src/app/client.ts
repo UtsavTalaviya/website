@@ -57,3 +57,17 @@ export interface player{
     club_name:string;
     player_name:string;
 }
+
+export interface season{
+    Season: any;
+}
+
+export interface team_status{
+    home_team: number;
+    team_long_name: string;
+    matches: number;
+    won: number;
+    lost: number;
+    draw: number;
+    win_percentage: number;
+} 

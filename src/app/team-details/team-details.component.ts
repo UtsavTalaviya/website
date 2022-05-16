@@ -11,6 +11,7 @@ import { ClientService } from '../client.service';
 export class TeamDetailsComponent implements OnInit {
   PlayerTeam!:any;
   id!: any;
+  teamstatus!: any;
 
   constructor(private route:ActivatedRoute,
               private clientService:ClientService) { }
@@ -20,10 +21,16 @@ export class TeamDetailsComponent implements OnInit {
     .subscribe(data => {this.PlayerTeam = data});
   }
 
+  getTeamStatus(){
+    this.clientService.getInfoTeamStatus()
+    .subscribe(data => {this.teamstatus = data});
+  }
+
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('team_long_name');
     console.log(this.id);
     this.getPlayerTeam();
+    this.getTeamStatus();
   }
 
 }
